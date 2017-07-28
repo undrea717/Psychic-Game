@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Psychic Game</title>
+</head>
+<body>
+	
+	
+	<script type="text/javascript">
+
+	document.write("<h1>The Psychic Game</h1>")
+
+	document.write("<p>Guess what Letter I'm thinking of</p>")
+
+// Array for computer pic
+	var computerOptions = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","r","s","t","u","v","w","x","y","z"]
+
+// Variables for game
+	var win = 0;
+	var losses = 0;
+	var maxTries = 9;
+	var triesCount = 0;
+	var guessLetters = [];
+	
+
+	// Computer Choice 
+	var randomLetter = (Math.floor(Math.random() * 26));
+	var computerChoice = computerOptions[randomLetter];
+	console.log(computerChoice);
+
+// compare player choice to computer
+	
+	document.onkeyup = function(event){
+		var playerChoice = event.key;
+		guessLetters.push(playerChoice);
+		console.log(event);
+		
+
+		if(playerChoice === computerChoice){
+		alert("You Won!");
+			win ++;
+
+		}else{
+			triesCount ++;
+			maxTries --;
+			console.log();
+		}
+
+		for (i = 0; i > 10; i--) {
+			if(playerChoice !== computerChoice){(event[i])
+		}
+		}
+
+    	document.write("<p>Win:</p>" + win++);
+
+		document.write("<p>Losses:</p>" + losses++);
+
+		document.write("<p>Guesses left:</p>" + maxTries--);
+
+		document.write("<p>Guess so far:</p>" + triesCount++);
+
+		document.write("<div>Your Guess </div>" + guessLetters);
+	}
+
+	
+
+
+</script>
+
+
+</body>
+</html>
